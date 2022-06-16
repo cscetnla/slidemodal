@@ -1,0 +1,156 @@
+*{/* Se utiliza para seleccionar todos los elementos de la pagina */
+  box-sizing: border-box
+  /* box-sizing:indica como se deben calcular las medidas de un elemento */
+  /* El valor border-box en el box-sizing hace que el padding y el border pasen a formar parte del calculo del ancho de la caja y no lo suman posteriormente */
+}
+
+body {
+    font-family: Verdana, sans-serif;
+    /* font-family:define una lista de fuentes, con un orden de prioridad, para utilizar en un elemento seleccionado */
+    margin:0;/* margin:margen externa */
+    background: #000000b6;/* color de fondo */
+    background-size: cover;
+    /* background-size:especifica el tamaño de las imagenes de fondo */
+    /* cover: Esta propiedad escala la imagen al minimo tamaño, manteniendo tambien las proporciones, para que ocupe todo el contenedor*/
+}
+
+.mySlides{
+    display: flex
+    /* display:propiedad que especifica el tipo de visualizacion interna o externa de un elemento */
+    /* flex:propiedad que indica la capacidad de un elemento flexible para alterar sus dimensiones y llenar el espacio disponible */
+}
+
+img {
+    vertical-align: middle;
+    /* vertical-align:propiedad que especifica el alineado vertical de un elemento en linea o una celda de una tabla */
+    /* middle:alinea la mitad del elemento con la mitad de las letras minusculas del padre */
+    max-width: 1000px;/* propiedad para definir el maximo ancho a un elemento */
+    max-height: 800px;/* propiedad para definir la altura maxima a un elemento */
+}
+
+/* Slideshow container */
+.slideshow-container{
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+  background: #000000;
+}
+
+/* position:fixed. El elemento se mantiene fijo en la pantalla */
+/* position:relative. Es para posicionar un elemento en un determinado lugar pero sin que este fijo */
+/* position:absolute. Posiciona un elemento en base a otro elemento */
+
+/* Next & previous buttons */
+.prev, .next{
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;/* el navegador calculara y seleccionara la anchura para el elemento especificado */
+  padding: 16px;/* margenes internas */
+  margin-top: -22px;/* propiedad que establece el area de margen en la parte superior de un elelemto. Un valor positivo lo ubica mas lejos de sus vecinos, un valor negativo hace lo contrario */
+  color: white;/* color de elelementos como lo son letras, signos, etc */
+  font-weight: bold;
+  /* font-weight:propiedad que especifica el peso o grueso de la letra */
+  /* bold:grueso ancho(negrita), igual a 700 */
+  font-size: 18px;/* tamaño de fuente */
+  transition: 0.6s ease;/* duracion de aimacion hover */
+  /* ease:este es el valor por defecto. Tiene un comienzo lento, luego rapido y termina de nuevo lentamente */
+  border-radius: 20px;/* modifica el borde del elemento */
+  user-select: none;/* controla si el usuario puede seleccionar el texto */
+}
+
+/* Position the "next button" to the right */
+.next{
+  right: 0;
+  border-radius: 20px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover{
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text{
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext{
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot{
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+/* display:inline. acomoda los elementos en linea la etiqueta a trae esto por defecto */
+/* display:block. acomoda los elementos en bloque verticalmente */
+/* display:inline-block. acomoda los elementos unos al lado del otro horizontalmente, para esto tambien se usa display flex */
+
+.active, .dot:hover{
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade{
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade{
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+
+
+header{
+  height: 70px;
+  background: #000000;
+  text-align: center;
+}
+
+header button{
+  background: #000000;
+  color: #ffffff;
+  border-radius: 20px;
+  margin-top: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: 1s;
+  font-size: 15px;
+  padding: 5px 20px;
+  border: 1px solid #ffffff;
+}
+
+header button:hover{
+  background: #717171;
+  color: #ff9100;
+  border-color: #ff9100;
+  font-size: 17px;
+  margin: 22px;
+}

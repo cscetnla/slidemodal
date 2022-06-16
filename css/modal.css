@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+/* Box-sizing: Es la propiedad que nos permite controlar el 
+calculo que hace el navegador a la hora de 
+modificar las propiedades content, padding y border.
+Los 2 valores que podemos darle son
+    content-box -> Valor por defecto
+    border-box  -> Calculo de tamaño del elemento
+    incluyendo el padding y el border. 
+ */
+
+.btn{
+    background: #0428c7e3;
+    font-family: 'Poppins';
+    color: #ffffff;
+    margin: 12px;
+    padding: 12px;
+    border-radius: 20px;
+    border: 1px solid #000000;
+    transition: 1s;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+  /* Caracteristicas del Modal */
+  .modalContainer1{
+    display: flex;
+    background: #5a8cc449;
+    align-items: center;/* mantiene el tamaño de la ventana modal */
+    /* La propiedad align-items establce el valor align-self
+    sobre todos los descendientes directos de un grupo.
+    La propiedad align-self indica la alineacion de un
+    elemento dentro del bloque que lo contiene.
+     */
+    justify-content: center;/* centra la ventana modal */
+    /* La propiedad justify-content define como  el 
+    navegador distribuye el espacio entre y alrededor 
+    de los items flex, a lo largo del eje principal de
+    su contenedor.
+     */
+    position: fixed;
+    pointer-events: none;/* al quitar esta propiedad no permite interactuar al raton con los elementos de la pagina */
+    /* la propiedad pointer-events establece como interactua
+    (si interactua) un cierto elemento con el raton.
+    */
+    top: 0;
+    left: 0;
+    height: 100vh;/* vh:viewport height(altura del dispositivo) */
+    width: 100vw;/* vw:viewport width(ancho del dispositivo) */
+    opacity: 0; /* Para que no se vea el modal */
+}
+  
+  .modal{
+    background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+    width: 300px;
+    max-width: 100%;
+    padding: 20px 50px;
+    border-radius: 5px;
+    border: 1px solid #000000;
+    box-shadow: 0 2px 4px #00eeff;
+    text-align: center;
+}
+  
+.show{
+  pointer-events: auto;/* permite cerrar la modal */
+  opacity: 1;
+}

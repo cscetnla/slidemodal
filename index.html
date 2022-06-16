@@ -1,0 +1,115 @@
+<!DOCTYPE html><!-- No es una etiqueta es una declaracion, informa al navegador que version de HTML (o XML) se uso pa escribir el documento -->
+<html lang="es"><!-- atributo global lang define el lenguaje del elemento -->
+<head><!-- Provee informacion general (metadatos) acerca del documento incluyendo su titulo y enlaces a scripts y hojas de estilo -->
+    <meta charset="UTF-8">
+    <!-- meta(solo tiene una): sirve para aportar informacion sobre el documento, esta definido como elemento de cabecera. -->
+    <!-- charset:es un parametro para especificar la codificacion de caracteres del documento -->
+    <!-- UTF-8:es un formato estandar para almacenar caracteres Unicode -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- meta(solo tiene una): sirve para aportar informacion sobre el documento, esta definido como elemento de cabecera. -->
+    <!-- http-equiv:atributo que sirve para obtener informacion sobre los encabezados del mensaje de respuesta HTTP. Informacion sobre el idioma del contenido del elemento y del valor de sus atributos -->
+    <!-- X-UA-Compatible:permite a los autores de la web elegir la version de Internet Explorer con la que se debe mostrar la pagina -->
+    <!-- content:propiedad que se emplea para generar nuevo contenido de forma dinamoca e insertarlo en la pagina HTML -->
+    <!-- IE=edge:es un modo que le dice a Internet Explorer que muestre el contenido en el modo mas alto posible -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- meta(solo tiene una): sirve para aportar informacion sobre el documento, esta definido como elemento de cabecera. -->
+    <!-- name:atributo que permite a un script acceder a su contenido. Es preferible utilizar los dos atributos con el mismo identificado, por motivos de compatibilidad. El atributo action indica la pagina a la que se envian los datos del formulario -->
+    <!-- viewport:se refiere a la parte del documento que uested esta viendo. El contenido fuera del viewport no es visible en la pantalla hasta que sea desplazado dentro de el -->
+    <!-- content:propiedad que se emplea para generar nuevo contenido de forma dinamoca e insertarlo en la pagina HTML -->
+    <!-- width=device-width establece el ancho de la ventana grafica al ancho del dispositivo -->
+    <!-- initial-scale=1:establece el nivel de zoom inicial cuando el usuario visita la pagina -->
+    <link rel="stylesheet" href="css/style.css">  
+    <!-- <link rel="stylesheet":define una hoja de estilos preferida o altenativa. Este atributo es usado para definir el tipo de contenido al que se enlaza> -->
+    <!-- href:atributo que se utiliza para hacer referencia a otro documento -->
+    <link rel="stylesheet" href="css/modal.css">
+    <!-- <link rel="stylesheet":define una hoja de estilos preferida o altenativa. Este atributo es usado para definir el tipo de contenido al que se enlaza> -->
+    <!-- href:atributo que se utiliza para hacer referencia a otro documento -->
+    <title>Slide Modal</title><!-- title:titulo de la pagina -->
+</head>
+<body><!-- Representa el contenido de un documento HTML. Solo puede haber un elemento <body> en un documento -->
+
+  <header><!-- Representa un grupo de ayudas introductorias o de navegacion, puede contener elementos de encabezado, logo, formulario de busqueda, nombre de un autor etc -->
+    <div><!-- Etiqueta que define las divisiones logicas existentes en el contenido de una pagina web. Se utiliza para centrar bloques de contenido, crear efectos de columna y crear diferentes areas de color, etc -->
+      <button class="inicio" id="inicio">INICIAR SESION</button><!-- Etiqueta que crea un boton en la pagina -->
+    <!-- class: atributo global, agrupa elementos, es una lista de las clases del elemento separada por espacios. Las clases permiten a CSS y JavaScript seleccionar y acceder a elementos especificos a traves de los selectores de clase o funciones como el metodo document, las clases se aplican a elementos que se repitan -->
+    <!-- id:identifica solamente un elemento que se mostrara una unica vez en la pagina -->
+    </div>
+    <div>
+      <p id="demo"></p><!-- Etiqeuta para distribuir el texto en parrafos -->
+    </div>
+  </header>
+ 
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 3</div>
+          <img src="img/motouno.jpg" alt="Moto Uno">
+          <!-- img:representa una imagen el documento -->
+          <!-- src:atributo que contiene una ruta que apunta a la imagen que quieres poner en la pagina -->
+          <!-- alt:atributo definido en un conjunto de etiquetas (concretamente, img, area y, opcionalmente, en inut y applet) para permitir proporcionar un texto equivalente al objeto -->
+          <div class="text">Harley Davidson</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 3</div>
+          <img src="img/motodos.jpg" alt="Moto Dos">
+          <div class="text">Meteora</div>
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 3</div>
+          <img src="img/mototres.jpg" alt="Moto Tres">
+          <div class="text">Yamaha</div>
+        </div>
+        
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+        <!-- a(Anchor):crea un enlace a otras paginas de internet, archivos o dentro de la misma pagina, direcciones de correo, o cualquier otra URL -->
+        <!-- onclick:ejecuta una funcion cuando se le da click a un elemento -->
+        
+        </div>
+        <br><!-- Salto de linea -->
+        <div style="text-align:center">
+          <!-- style:elemento encargado de indicar la informacion de estilo -->
+          <!-- text-align:center:propiedad que da la alineacin del texto del elemento -->
+          <span class="dot" onclick="currentSlide(1)"></span> 
+          <span class="dot" onclick="currentSlide(2)"></span> 
+          <span class="dot" onclick="currentSlide(3)"></span> 
+          <!-- Es un contenedor en linea. Sirve para alicar estilo al texto o agrupar elementos en linea. -->
+        </div>
+
+
+<!-- Modal -->
+
+<div class="modalContainer1" id="modalContainer">
+  <div class="modal">
+    <h2>INGRESO</h2><!-- h2:tamaño de fuente -->
+    <form action="#">
+      <!-- form:representa una seccion de un documento que contiene controles interactivos que permiten a un usuario enviar informacion a un servidor web -->
+      <!-- action:atributo donde se envian los datos que el formulario ha recopilado cuando se validan -->
+      <div>
+        <label for="usuario">Correo electronico</label>
+        <!-- label:representa una etiqueta para un elemento en una interfaz de usuario -->
+        <!-- for:identificador del label -->
+        <input type="email" id="usuario" required>
+        <!-- input:representa un campo de datos tipado que normalmente se asocia con un control que permite a los usuarios editar su valor -->
+        <!-- type:tipo de dato -->
+        <!-- required:indica al usuario que un input es requeirod en un elemento antes de que un form pueda ser enviado -->
+      </div>
+
+      <div>
+        <label for="contraseña">Contraseña</label>
+        <input type="text" id="contraseña">
+      </div>
+    </form>
+
+    <button class="btn" id="ingresar" onclick="modificar ()">Ingresar</button>
+
+  </div>
+</div>
+
+<script src="js/modal.js"></script>
+<script src="js/slide.js"></script>
+<!-- script:sirva para enlazar el codigo JS con el archivo HTML -->
+
+</body>
+</html>
